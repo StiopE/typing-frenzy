@@ -15,9 +15,7 @@ function App() {
   const [startTime, setStartTime] = useState();
   const [wordCount, setWordCount] = useState(0);
   const [wpm, setWpm] = useState(0);
-  if (!startTime) {
-    setStartTime(currentTime());
-  }
+  
 
   const [outgoingChars, setOutgoingChars] = useState("");
   const [currentChar, setCurrentChar] = useState(initialWords.charAt(0));
@@ -26,6 +24,9 @@ function App() {
   const [typedChars, setTypedChars] = useState("");
 
   useKeyPress((key) => {
+    if (!startTime) {
+      setStartTime(currentTime());
+    }
     let updatedOutgoingChars = outgoingChars;
     let updatedIncomingChars = incomingChars;
 
@@ -34,7 +35,7 @@ function App() {
 
     setAccuracy(
       ((updatedOutgoingChars.length * 100) / updatedTypedChars.length).toFixed(
-        2
+        0
       )
     );
 
@@ -47,7 +48,7 @@ function App() {
 
         const durationInMinutes = (currentTime() - startTime) / 60000.0;
 
-        setWpm(((wordCount + 1) / durationInMinutes).toFixed(2));
+        setWpm(((wordCount + 1) / durationInMinutes).toFixed(0));
       }
       updatedOutgoingChars += currentChar;
       setOutgoingChars(updatedOutgoingChars);
@@ -79,6 +80,8 @@ function App() {
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
+
+          
         ></a>
       </header>
     </div>

@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  font-family: monospace;
+  font-family: "Lato", sans-serif;
 }
 
 .Character {
@@ -8,7 +8,7 @@
 }
 
 .Character-current {
-  background-color: #09d3ac;
+  background-color: #ebb71e;
 }
 
 .Character-out {
@@ -27,7 +27,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: black;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
